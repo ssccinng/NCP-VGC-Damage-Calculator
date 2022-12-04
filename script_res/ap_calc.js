@@ -613,7 +613,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
         }
     }
 
-    var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
+    var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme, translate_pokemon);
     formeObj.children("select").find("option").remove().end().append(formeOptions).change();
     formeObj.show();
 }
@@ -728,7 +728,7 @@ function calculate() {
         if(p1.moves[i].isMLG){
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=iD92h-M474g'>it's a one-hit KO!</a>"; //dank memes
         }
-        $(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
+        $(resultLocations[0][i].move + " + label").text(translate_move(p1.moves[i].name.replace("Hidden Power", "HP")));
         $(resultLocations[0][i].damage).text(minPercent + " - " + maxPercent + "%");
         if (maxPercent > highestMaxPercent) {
             highestMaxPercent = maxPercent;
@@ -748,7 +748,7 @@ function calculate() {
         if(p2.moves[i].isMLG){
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=iD92h-M474g'>it's a one-hit KO!</a>";
         }
-        $(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
+        $(resultLocations[1][i].move + " + label").text(translate_move(p2.moves[i].name.replace("Hidden Power", "HP")));
         $(resultLocations[1][i].damage).text(minPercent + " - " + maxPercent + "%");
         if (maxPercent > highestMaxPercent) {
             highestMaxPercent = maxPercent;
@@ -763,8 +763,8 @@ function calculate() {
     temp_crit = bestResult.crit;
     bestResult.prop("checked", true);
     bestResult.change();
-    $("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");
-    $("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
+    $("#resultHeaderL").text(translate_pokemon(p1.name) + "的技能 (选择一个展示结果)");
+    $("#resultHeaderR").text(translate_pokemon(p2.name) + "的技能 (选择一个展示结果)");
 }
 
 $(".result-move").change(function() {
@@ -1120,14 +1120,14 @@ $(".gen").change(function () {
     clearField();
     $(".gen-specific.g" + gen).show();
     $(".gen-specific").not(".g" + gen).hide();
-    var typeOptions = getSelectOptions(Object.keys(typeChart));
+    var typeOptions = getSelectOptions(Object.keys(typeChart), undefined, undefined, translate_type);
     $("select.type1, select.move-type, select.tera-type").find("option").remove().end().append(typeOptions);
     $("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
-    var moveOptions = getSelectOptions(Object.keys(moves), true);
+    var moveOptions = getSelectOptions(Object.keys(moves), true, undefined, translate_move);
     $("select.move-selector").find("option").remove().end().append(moveOptions);
-    var abilityOptions = getSelectOptions(abilities, true);
+    var abilityOptions = getSelectOptions(abilities, true, undefined, translate_ability);
     $("select.ability").find("option").remove().end().append("<option value=\"\">(other)</option>" + abilityOptions);
-    var itemOptions = getSelectOptions(items, true);
+    var itemOptions = getSelectOptions(items, true, undefined, translate_item);
     $("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
 
     $(".set-selector").val(getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
@@ -1180,14 +1180,14 @@ function getSetOptions() {
             console.log(pokeNames[index]);
         }
     }
-    pokeNames.sort();
+    pokeNames.sort((a, b) => translate_pokemon(a).localeCompare(translate_pokemon(b)));
     var setOptions = [];
     var idNum = 0;
     for (var i = 0; i < pokeNames.length; i++) {
         var pokeName = pokeNames[i];
         setOptions.push({
             pokemon: pokeName,
-            text: pokeName
+            text: translate_pokemon(pokeName)
         });
         if (pokeName in setdex) {
             var setNames = Object.keys(setdex[pokeName]);
@@ -1196,16 +1196,16 @@ function getSetOptions() {
                 setOptions.push({
                     pokemon: pokeName,
                     set: setName,
-                    text: pokeName + " (" + setName + ")",
+                    text: translate_pokemon(pokeName) + " (" + setName + ")",
                     id: pokeName + " (" + setName + ")"
                 });
             }
         }
         setOptions.push({
             pokemon: pokeName,
-            set: "Blank Set",
-            text: pokeName + " (Blank Set)",
-            id: pokeName + " (Blank Set)"
+            set: "空白配置",
+            text: translate_pokemon(pokeName) + " (空白配置)",
+            id: pokeName + " (空白配置)"
         });
     }
     return setOptions;
@@ -1229,7 +1229,25 @@ function getSelectOptions(arr, sort, defaultIdx) {
     }
     return r;
 }
-
+function getSelectOptions(arr, sort, defaultIdx, transFunc) {
+    transFunc = transFunc == null ? function (x) { return x; } : transFunc;
+    if (sort) {
+        arr.sort((a, b) => transFunc(a).localeCompare(transFunc(b)));
+    }
+    var r = '';
+    // Zero is of course falsy too, but this is mostly to coerce undefined.
+    if (!defaultIdx) {
+        defaultIdx = 0;
+    }
+    for (var i = 0; i < arr.length; i++) {
+        if (i === defaultIdx) {
+            r += '<option value="' + arr[i] + '" selected="selected">' + transFunc(arr[i]) + '</option>';
+        } else {
+            r += '<option value="' + arr[i] + '">' + transFunc(arr[i]) + '</option>';
+        }
+    }
+    return r;
+}
 $(document).ready(function() {
     $("#gen9").prop("checked", true);
     $("#gen9").change();

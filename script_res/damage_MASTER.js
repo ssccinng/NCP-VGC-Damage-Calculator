@@ -44,28 +44,28 @@ function buildDescription(description) {
         output += description.ruinSwordBeads + " of Ruin ";
     }
     if (description.attackerTera) {
-        output += "Tera-" + description.attackerTera + " ";
+        output += "太晶-" + translate_type(description.attackerTera) + " ";
     }
     if (description.isBurned) {
-        output += "burned ";
+        output += "烧伤 ";
     }
-    output += description.attackerName + " ";
+    output += translate_pokemon(description.attackerName) + " ";
     if (description.isHelpingHand) {
-        output += "Helping Hand ";
+        output += "帮助 ";
     }
     if (description.isPowerSpot) {
-        output += "Power Spot ";
+        output += "能量点 ";
     }
     if (description.isBattery) {
-        output += "Battery ";
+        output += "蓄电池 ";
     }
     if (description.isSteelySpirit) {
-        output += "Ally Steely Spirit ";
+        output += "钢之意志 ";
     }
     if (description.isFlowerGiftAtk) {
-        output += "Flower Gift ";
+        output += "花之礼 ";
     }
-    output += description.moveName + " ";
+    output += translate_move(description.moveName) + " ";
     if (description.moveBP && description.moveType) {
         output += "(" + description.moveBP + " BP " + description.moveType + ") ";
     } else if (description.moveBP) {
@@ -77,7 +77,7 @@ function buildDescription(description) {
         output += "(" + description.hits + " hits) ";
     }
     if (description.courseDriftSE) {
-        output+="(Super Effective) "
+        output+="(效果绝佳) "
     }
     output += "vs. ";
     if (description.defenseBoost) {
@@ -92,35 +92,36 @@ function buildDescription(description) {
     }
     output = appendIfSet(output, description.defenderItem);
     if (description.isFlowerGiftSpD) {
-        output += " Flower Gift ";
+        output += " 花之礼 ";
     }
     output = appendIfSet(output, description.defenderAbility);
     if (description.ruinTabletsVessel) {
         output += description.ruinTabletsVessel + " of Ruin ";
     }
     if (description.isDynamax) output += " Dynamax ";
+    console.log("dabn")
     if (description.defenderTera) {
-        output += "Tera-" + description.defenderTera + " ";
+        output += "太晶-" + translate_type(description.defenderTera) + " ";
     }
-    output += description.defenderName;
+    output += translate_pokemon(description.defenderName);
     if (description.weather) {
-        output += " in " + description.weather;
+        output += " (" + translate_field(description.weather) + ")";
     } else if (description.terrain) {
-        output += " in " + description.terrain + " Terrain";
+        output += " (" + translate_field(description.terrain) + ")";
     }
     if (description.isReflect) {
-        output += " through Reflect";
+        output += " 反射壁";
     } else if (description.isLightScreen) {
-        output += " through Light Screen";
+        output += " 光墙";
     }
     if (description.isCritical) {
-        output += " on a critical hit";
+        output += " 击中要害";
     }
     if (description.isFriendGuard) {
-        output += " with Friend Guard";
+        output += " 友情防守";
     }
     if (description.isQuarteredByProtect) {
-        output += " through Protect";
+        output += " 守住";
     }
 
     return output;
@@ -712,7 +713,7 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
         return { "damage": [0], "description": buildDescription(description) };
     }
     if (defender.isDynamax && ["Grass Knot", "Low Kick", "Heat Crash", "Heavy Slam"].indexOf(move.name) !== -1) {
-        return { "damage": [0], "description": buildDescription(description) };
+        return { "damage": [0], "description": (description) };
     }
     if ((defAbility === "Damp" || attacker.ability === "Damp") && ["Self-Destruct", "Explosion", "Mind Blown", "Misty Explosion"].indexOf(move.name) !== -1) {
         description.defenderAbility = defAbility;
@@ -1177,7 +1178,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         description.moveBP = move.bp * 1.5;
     }
 
-    //r. Helping Hand
+    //r. 帮助
     if (field.isHelpingHand) {  //calculated differently in gen 3
         bpMods.push(0x1800);
         description.isHelpingHand = true;

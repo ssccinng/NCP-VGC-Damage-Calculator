@@ -107,7 +107,7 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
         }
         move.isCrit = tempMove.isCrit;
         move.hits = 1;
-        moveDescName = ZName + " (" + move.bp + " BP)";
+        moveDescName = translate_move(ZName) + " (" + move.bp + " BP)";
         if (field.isProtect) {
             isQuarteredByProtect = true;
         }
@@ -1014,7 +1014,7 @@ function buildDescriptionSS(description) {
     }
     output += description.attackerName + " ";
     if (description.isHelpingHand) {
-        output += "Helping Hand ";
+        output += "帮助 ";
     }
     if (description.isPowerSpot) {
         output += "Power Spot ";
@@ -1028,7 +1028,8 @@ function buildDescriptionSS(description) {
     if (description.isFlowerGiftAtk) {
         output += "Flower Gift ";
     }
-    output += description.moveName + " ";
+    console.log("dani");
+    output += translate_move(description.moveName) + " ";
     if (description.moveBP && description.moveType) {
         output += "(" + description.moveBP + " BP " + description.moveType + ") ";
     } else if (description.moveBP) {
