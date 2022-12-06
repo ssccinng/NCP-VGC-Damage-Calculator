@@ -1262,14 +1262,24 @@ $(document).ready(function() {
             var pageSize = 30;
             var results = [];
             for (var i = 0; i < setOptions.length; i++) {
-                var pokeName = setOptions[i].pokemon.toUpperCase();
-                //if (!query.term || pokeName.indexOf(query.term.toUpperCase()) === 0) {
-                //    results.push(setOptions[i]);
-                //}
-                if (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
-                    return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0;
-                }))
-                    results.push(setOptions[i]);
+
+                var pageSize = 30;
+                var results = [];
+                for (var i = 0; i < setOptions.length; i++) {
+                    var pokeName = setOptions[i].pokemon.toUpperCase();
+                    if (!query.term || pokeName.indexOf(query.term.toUpperCase()) === 0 || match_langs_pokemon(pokemonname_noforme(setOptions[i].pokemon), query.term.toUpperCase())) {
+                        results.push(setOptions[i]);
+                    }
+                }
+
+                // var pokeName = setOptions[i].pokemon.toUpperCase();
+                // //if (!query.term || pokeName.indexOf(query.term.toUpperCase()) === 0) {
+                // //    results.push(setOptions[i]);
+                // //}
+                // if (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
+                //     return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0;
+                // }))
+                //     results.push(setOptions[i]);
             }
             query.callback({
                 results: results.slice((query.page - 1) * pageSize, query.page * pageSize),
