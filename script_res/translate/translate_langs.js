@@ -894,11 +894,486 @@ const POKEMONNAMES_LANGS = {
 	"Zamazenta": { "chs": "藏玛然特" },
 	"Eternatus": { "chs": "无极汰那" }, "Eternatus-Eternamax": { "chs": "无极汰那-无极巨化" }, "Kubfu": { "chs": "熊徒弟" }, "Urshifu": { "chs": "武道雄狮-一击流" }, "Urshifu-Rapid-Strike": { "chs": "武道雄狮-连击流" }, "Zarude": { "chs": "萨戮德" }, "Zarude-Dada": { "chs": "萨戮德-阿爸" }, "Slowking-Galar": { "chs": "呆呆王-伽勒尔的样子" }, "Zapdos-Galar": { "chs": "闪电鸟-伽勒尔的样子" }, "Articuno-Galar": { "chs": "急冻鸟-伽勒尔的样子" }, "Moltres-Galar": { "chs": "火焰鸟-伽勒尔的样子" }, "Regieleki": { "chs": "雷吉艾勒奇" }, "Regidrago": { "chs": "雷吉铎拉戈" }, "Glastrier": { "chs": "雪暴马" }, "Spectrier": { "chs": "灵幽马" }, "Calyrex": { "chs": "蕾冠王" }, "Calyrex-Ice": { "chs": "蕾冠王-骑白马的样子" }, 
 	"Calyrex-Shadow": { "chs": "蕾冠王-骑黑马的样子", },
-	"Wyrdeer": { "chs": "劈斧螳螂", "pinyin": "pifutanglang", }, 
-	"Kleavor": {"chs": "月月熊", "pinyin": "yueyuexiong"}, "Ursaluna": {"chs": "幽尾玄鱼", "pinyin": "youweixuanyu"}, 
-	"Basculegion": {"chs": "Basculegion-F", "pinyin": "Basculegion-F"}, "Basculegion-F": {"chs": "大狃拉", "pinyin": "daniula"}, 
-	"Sneasler": {"chs": "万针鱼", "pinyin": "wanzhenyu"}, "Overqwil": {"chs": "眷恋云", "pinyin": "juanlianyun"}, 
-	"Enamorus": {"chs": "Enamorus-Therian", "pinyin": "Enamorus-Therian"}, "Enamorus-Therian": {"chs": "新叶喵", "pinyin": "xinyemiao"}, "Sprigatito": {"chs": "蒂蕾喵", "pinyin": "dileimiao"}, "Floragato": {"chs": "魔幻假面喵", "pinyin": "mohuanjiamianmiao"}, "Meowscarada": {"chs": "呆火鳄", "pinyin": "daihuoe"}, "Fuecoco": {"chs": "炙烫鳄", "pinyin": "zhitange"}, "Crocalor": {"chs": "骨纹巨声鳄", "pinyin": "guwenjushenge"}, "Skeledirge": {"chs": "润水鸭", "pinyin": "runshuiya"}, "Quaxly": {"chs": "涌跃鸭", "pinyin": "yongyueya"}, "Quaxwell": {"chs": "狂欢浪舞鸭", "pinyin": "kuanghuanlangwuya"}, "Quaquaval": {"chs": "爱吃豚", "pinyin": "aichitun"}, "Lechonk": {"chs": "飘香豚", "pinyin": "piaoxiangtun"}, "Oinkologne": {"chs": "Oinkologne-F", "pinyin": "Oinkologne-F"}, "Oinkologne-F": {"chs": "土龙节节", "pinyin": "tulongjiejie"}, "Dudunsparce": {"chs": "Dudunsparce-Three-Segment", "pinyin": "Dudunsparce-Three-Segment"}, "Dudunsparce-Three-Segment": {"chs": "团珠蛛", "pinyin": "tuanzhuzhu"}, "Tarountula": {"chs": "操陷蛛", "pinyin": "caoxianzhu"}, "Spidops": {"chs": "豆蟋蟀", "pinyin": "douxishuai"}, "Nymble": {"chs": "烈腿蝗", "pinyin": "lietuihuang"}, "Lokix": {"chs": "虫滚泥", "pinyin": "chonggunni"}, "Rellor": {"chs": "虫甲圣", "pinyin": "chongjiasheng"}, "Rabsca": {"chs": "墓仔狗", "pinyin": "muzigou"}, "Greavard": {"chs": "墓扬犬", "pinyin": "muyangquan"}, "Houndstone": {"chs": "飘飘雏", "pinyin": "piaopiaochu"}, "Flittle": {"chs": "超能艳鸵", "pinyin": "chaonengyantuo"}, "Espathra": {"chs": "奇麒麟", "pinyin": "qiqilin"}, "Farigiraf": {"chs": "海地鼠", "pinyin": "haidishu"}, "Wiglett": {"chs": "三海地鼠", "pinyin": "sanhaidishu"}, "Wugtrio": {"chs": "吃吼霸", "pinyin": "chihouba"}, "Dondozo": {"chs": "轻身 鳕", "pinyin": "qingshenxue"}, "Veluza": {"chs": "波普海豚", "pinyin": "bopuhaitun"}, "Finizen": {"chs": "海豚侠", "pinyin": "haitunxia"}, "Palafin": {"chs": "Palafin-Hero", "pinyin": "Palafin-Hero"}, "Palafin-Hero": {"chs": "迷你芙", "pinyin": "minifu"}, "Smoliv": {"chs": "奥利纽", "pinyin": "aoliniu"}, "Dolliv": {"chs": "奥利瓦", "pinyin": "aoliwa"}, "Arboliva": {"chs": "热辣娃", "pinyin": "relawa"}, "Capsakid": {"chs": "狠辣椒", "pinyin": "henlajiao"}, "Scovillain": {"chs": "光蚪仔", "pinyin": "guangdouzi"}, "Tadbulb": {"chs": "电肚蛙", "pinyin": "dianduwa"}, "Bellibolt": {"chs": "噗隆隆", "pinyin": "pulonglong"}, "Varoom": {"chs": "普隆隆姆", "pinyin": "pulonglongmu"}, "Revavroom": {"chs": "拖拖蚓", "pinyin": "tuotuoyin"}, "Orthworm": {"chs": "一对鼠", "pinyin": "yiduishu"}, "Tandemaus": {"chs": "一家鼠", "pinyin": "yijiashu"}, "Maushold": {"chs": "Maushold-Four", "pinyin": "Maushold-Four"}, "Maushold-Four": {"chs": "走鲸", "pinyin": "zoujing"}, "Cetoddle": {"chs": "浩大鲸", "pinyin": "haodajing"}, "Cetitan": {"chs": "凉脊龙", "pinyin": "liangjilong"}, "Frigibax": {"chs": "冻脊龙", "pinyin": "dongjilong"}, "Arctibax": {"chs": "戟脊龙", "pinyin": "jijilong"}, "Baxcalibur": {"chs": "米立龙", "pinyin": "mililong"}, "Tatsugiri": {"chs": "摩托蜥", "pinyin": "motuoxi"}, "Cyclizar": {"chs": "布拨", "pinyin": "bubo"}, "Pawmi": {"chs": "布土拨", "pinyin": "butubo"}, "Pawmo": {"chs": "巴布土拨", "pinyin": "babutubo"}, "Pawmot": {"chs": "电海燕", "pinyin": "dianhaiyan"}, "Wattrel": {"chs": "大电海燕", "pinyin": "dadianhaiyan"}, "Kilowattrel": {"chs": "下石鸟", "pinyin": "xiashiniao"}, "Bombirdier": {"chs": "怒鹦哥", "pinyin": "nuyingge"}, "Squawkabilly": {"chs": "Squawkabilly-Blue", "pinyin": "Squawkabilly-Blue"}, "Squawkabilly-Blue": {"chs": "Squawkabilly-Yellow", "pinyin": "Squawkabilly-Yellow"}, "Squawkabilly-Yellow": {"chs": "Squawkabilly-White", "pinyin": "Squawkabilly-White"}, "Squawkabilly-White": {"chs": "缠红鹤", "pinyin": "chanhonghe"}, "Flamigo": {"chs": "毛崖蟹", "pinyin": "maoyaxie"}, "Klawf": {"chs": "盐石宝", "pinyin": "yanshibao"}, "Nacli": {"chs": "盐石垒", "pinyin": "yanshilei"}, "Naclstack": {"chs": "盐石巨灵", "pinyin": "yanshijuling"}, "Garganacl": {"chs": "晶光芽", "pinyin": "jingguangya"}, "Glimmet": {"chs": "晶光花", "pinyin": "jingguanghua"}, "Glimmora": {"chs": "滋汁鼹", "pinyin": "zizhiyan"}, "Shroodle": {"chs": "涂标客", "pinyin": "tubiaoke"}, "Grafaiai": {"chs": "狗 仔包", "pinyin": "gouzibao"}, "Fidough": {"chs": "麻花犬", "pinyin": "mahuaquan"}, "Dachsbun": {"chs": "偶叫獒", "pinyin": "oujiaoao"}, "Maschiff": {"chs": "獒教父", "pinyin": "aojiaofu"}, "Mabosstiff": {"chs": "纳噬草", "pinyin": "nashicao"}, "Bramblin": {"chs": "怖纳噬草", "pinyin": "bunashicao"}, "Brambleghast": {"chs": "索财灵", "pinyin": "suocailing"}, "Gimmighoul": {"chs": "Gimmighoul-Roaming", "pinyin": "Gimmighoul-Roaming"}, "Gimmighoul-Roaming": {"chs": "赛富豪", "pinyin": "saifuhao"}, "Gholdengo": {"chs": "雄伟牙", "pinyin": "xiongweiya"}, "Great Tusk": {"chs": "猛恶菇", "pinyin": "mengegu"}, "Brute Bonnet": {"chs": "沙铁皮", "pinyin": "shatiepi"}, "Sandy Shocks": {"chs": "吼叫尾", "pinyin": "houjiaowei"}, "Scream Tail": {"chs": "振翼发", "pinyin": "zhenyifa"}, "Flutter Mane": {"chs": "爬地翅", "pinyin": "padichi"}, "Slither Wing": {"chs": "轰鸣月", "pinyin": "hongmingyue"}, "Roaring Moon": {"chs": "铁辙迹", "pinyin": "tiezheji"}, "Iron Treads": {"chs": "铁毒蛾", "pinyin": "tiedue"}, "Iron Moth": {"chs": "铁臂膀", "pinyin": "tiebibang"}, "Iron Hands": {"chs": "铁脖颈", "pinyin": "tiebojing"}, "Iron Jugulis": {"chs": "铁荆棘", "pinyin": "tiejingji"}, "Iron Thorns": {"chs": "铁包袱", "pinyin": "tiebaofu"}, "Iron Bundle": {"chs": "铁武者", "pinyin": "tiewuzhe"}, "Iron Valiant": {"chs": "古鼎鹿", "pinyin": "gudinglu"}, "Ting-Lu": {"chs": "古剑豹", "pinyin": "gujianbao"}, "Chien-Pao": {"chs": "古简蜗", "pinyin": "gujiangua"}, "Wo-Chien": {"chs": "古玉鱼", "pinyin": "guyuyu"}, "Chi-Yu": {"chs": "故勒顿", "pinyin": "guledun"}, "Koraidon": {"chs": "密勒顿", "pinyin": "miledun"}, "Miraidon": {"chs": "小锻匠", "pinyin": "xiaoduanjiang"}, "Tinkatink": {"chs": "巧锻匠", "pinyin": "qiaoduanjiang"}, "Tinkatuff": {"chs": "巨锻匠", "pinyin": "juduanjiang"}, "Tinkaton": {"chs": "炭小侍", "pinyin": "tanxiaoshi"}, "Charcadet": {"chs": "红莲铠骑", "pinyin": "hongliankaiqi"}, "Armarouge": {"chs": "苍炎刃鬼", "pinyin": "cangyanrengui"}, "Ceruledge": {"chs": "原野水母", "pinyin": "yuanyeshuimu"}, "Toedscool": {"chs": "陆地水母", "pinyin": "ludishuimu"}, "Toedscruel": {"chs": "仆刀将军", "pinyin": "pudaojiangjun"}, "Kingambit": {"chs": "土王", "pinyin": "tuwang"}, "Clodsire": {"chs": "弃世猴", "pinyin": "qishihou"}
+	"Wyrdeer": {
+        "chs": "诡角鹿",
+        "pinyin": "guijiaolu"
+    },
+    "Kleavor": {
+        "chs": "劈斧螳螂",
+        "pinyin": "pifutanglang"
+    },
+    "Ursaluna": {
+        "chs": "月月熊",
+        "pinyin": "yueyuexiong"
+    },
+    "Basculegion": {
+        "chs": "幽尾玄鱼",
+        "pinyin": "youweixuanyu"
+    },
+    "Basculegion-F": {
+        "chs": "Basculegion-F",
+        "pinyin": "Basculegion-F"
+    },
+    "Sneasler": {
+        "chs": "大狃拉",
+        "pinyin": "daniula"
+    },
+    "Overqwil": {
+        "chs": "万针鱼",
+        "pinyin": "wanzhenyu"
+    },
+    "Enamorus": {
+        "chs": "眷恋云",
+        "pinyin": "juanlianyun"
+    },
+    "Enamorus-Therian": {
+        "chs": "Enamorus-Therian",
+        "pinyin": "Enamorus-Therian"
+    },
+    "Sprigatito": {
+        "chs": "新叶喵",
+        "pinyin": "xinyemiao"
+    },
+    "Floragato": {
+        "chs": "蒂蕾喵",
+        "pinyin": "dileimiao"
+    },
+    "Meowscarada": {
+        "chs": "魔幻假面喵",
+        "pinyin": "mohuanjiamianmiao"
+    },
+    "Fuecoco": {
+        "chs": "呆火鳄",
+        "pinyin": "daihuoe"
+    },
+    "Crocalor": {
+        "chs": "炙烫鳄",
+        "pinyin": "zhitange"
+    },
+    "Skeledirge": {
+        "chs": "骨纹巨声鳄",
+        "pinyin": "guwenjushenge"
+    },
+    "Quaxly": {
+        "chs": "润水鸭",
+        "pinyin": "runshuiya"
+    },
+    "Quaxwell": {
+        "chs": "涌跃鸭",
+        "pinyin": "yongyueya"
+    },
+    "Quaquaval": {
+        "chs": "狂欢浪 舞鸭",
+        "pinyin": "kuanghuanlangwuya"
+    },
+    "Lechonk": {
+        "chs": "爱吃豚",
+        "pinyin": "aichitun"
+    },
+    "Oinkologne": {
+        "chs": "飘香豚",
+        "pinyin": "piaoxiangtun"
+    },
+    "Oinkologne-F": {
+        "chs": "Oinkologne-F",
+        "pinyin": "Oinkologne-F"
+    },
+    "Dudunsparce": {
+        "chs": "土龙节节",
+        "pinyin": "tulongjiejie"
+    },
+    "Dudunsparce-Three-Segment": {
+        "chs": "Dudunsparce-Three-Segment",
+        "pinyin": "Dudunsparce-Three-Segment"
+    },
+    "Tarountula": {
+        "chs": "团珠蛛",
+        "pinyin": "tuanzhuzhu"
+    },
+    "Spidops": {
+        "chs": "操陷蛛",
+        "pinyin": "caoxianzhu"
+    },
+    "Nymble": {
+        "chs": "豆蟋蟀",
+        "pinyin": "douxishuai"
+    },
+    "Lokix": {
+        "chs": "烈腿蝗",
+        "pinyin": "lietuihuang"
+    },
+    "Rellor": {
+        "chs": "虫滚泥",
+        "pinyin": "chonggunni"
+    },
+    "Rabsca": {
+        "chs": "虫甲圣",
+        "pinyin": "chongjiasheng"
+    },
+    "Greavard": {
+        "chs": "墓仔狗",
+        "pinyin": "muzigou"
+    },
+    "Houndstone": {
+        "chs": "墓扬犬",
+        "pinyin": "muyangquan"
+    },
+    "Flittle": {
+        "chs": "飘飘雏",
+        "pinyin": "piaopiaochu"
+    },
+    "Espathra": {
+        "chs": "超能艳鸵",
+        "pinyin": "chaonengyantuo"
+    },
+    "Farigiraf": {
+        "chs": "奇麒麟",
+        "pinyin": "qiqilin"
+    },
+    "Wiglett": {
+        "chs": "海地鼠",
+        "pinyin": "haidishu"
+    },
+    "Wugtrio": {
+        "chs": "三海地鼠",
+        "pinyin": "sanhaidishu"
+    },
+    "Dondozo": {
+        "chs": "吃吼霸",
+        "pinyin": "chihouba"
+    },
+    "Veluza": {
+        "chs": "轻身鳕",
+        "pinyin": "qingshenxue"
+    },
+    "Finizen": {
+        "chs": "波普海豚",
+        "pinyin": "bopuhaitun"
+    },
+    "Palafin": {
+        "chs": "海豚侠",
+        "pinyin": "haitunxia"
+    },
+    "Palafin-Hero": {
+        "chs": "Palafin-Hero",
+        "pinyin": "海豚侠-全能模式"
+    },
+    "Smoliv": {
+        "chs": "迷你芙",
+        "pinyin": "minifu"
+    },
+    "Dolliv": {
+        "chs": "奥利纽",
+        "pinyin": "aoliniu"
+    },
+    "Arboliva": {
+        "chs": "奥利瓦",
+        "pinyin": "aoliwa"
+    },
+    "Capsakid": {
+        "chs": "热辣娃",
+        "pinyin": "relawa"
+    },
+    "Scovillain": {
+        "chs": "狠辣椒",
+        "pinyin": "henlajiao"
+    },
+    "Tadbulb": {
+        "chs": "光蚪仔",
+        "pinyin": "guangdouzi"
+    },
+    "Bellibolt": {
+        "chs": "电肚蛙",
+        "pinyin": "dianduwa"
+    },
+    "Varoom": {
+        "chs": "噗隆隆",
+        "pinyin": "pulonglong"
+    },
+    "Revavroom": {
+        "chs": "普隆隆姆",
+        "pinyin": "pulonglongmu"
+    },
+    "Orthworm": {
+        "chs": "拖拖蚓",
+        "pinyin": "tuotuoyin"
+    },
+    "Tandemaus": {
+        "chs": "一对鼠",
+        "pinyin": "yiduishu"
+    },
+    "Maushold": {
+        "chs": "一家鼠",
+        "pinyin": "yijiashu"
+    },
+    "Maushold-Four": {
+        "chs": "Maushold-Four",
+        "pinyin": "Maushold-Four"
+    },
+    "Cetoddle": {
+        "chs": "走鲸",
+        "pinyin": "zoujing"
+    },
+    "Cetitan": {
+        "chs": "浩大鲸",
+        "pinyin": "haodajing"
+    },
+    "Frigibax": {
+        "chs": "凉脊龙",
+        "pinyin": "liangjilong"
+    },
+    "Arctibax": {
+        "chs": "冻脊龙",
+        "pinyin": "dongjilong"
+    },
+    "Baxcalibur": {
+        "chs": "戟脊龙",
+        "pinyin": "jijilong"
+    },
+    "Tatsugiri": {
+        "chs": "米立龙",
+        "pinyin": "mililong"
+    },
+    "Cyclizar": {
+        "chs": "摩托蜥",
+        "pinyin": "motuoxi"
+    },
+    "Pawmi": {
+        "chs": "布拨",
+        "pinyin": "bubo"
+    },
+    "Pawmo": {
+        "chs": "布土拨",
+        "pinyin": "butubo"
+    },
+    "Pawmot": {
+        "chs": "巴布土拨",
+        "pinyin": "babutubo"
+    },
+    "Wattrel": {
+        "chs": "电海燕",
+        "pinyin": "dianhaiyan"
+    },
+    "Kilowattrel": {
+        "chs": " 大电海燕",
+        "pinyin": "dadianhaiyan"
+    },
+    "Bombirdier": {
+        "chs": "下石鸟",
+        "pinyin": "xiashiniao"
+    },
+    "Squawkabilly": {
+        "chs": "怒鹦哥",
+        "pinyin": "nuyingge"
+    },
+    "Squawkabilly-Blue": {
+        "chs": "Squawkabilly-Blue",
+        "pinyin": "Squawkabilly-Blue"
+    },
+    "Squawkabilly-Yellow": {
+        "chs": "Squawkabilly-Yellow",
+        "pinyin": "Squawkabilly-Yellow"
+    },
+    "Squawkabilly-White": {
+        "chs": "Squawkabilly-White",
+        "pinyin": "Squawkabilly-White"
+    },
+    "Flamigo": {
+        "chs": "缠红鹤",
+        "pinyin": "chanhonghe"
+    },
+    "Klawf": {
+        "chs": "毛崖蟹",
+        "pinyin": "maoyaxie"
+    },
+    "Nacli": {
+        "chs": "盐石宝",
+        "pinyin": "yanshibao"
+    },
+    "Naclstack": {
+        "chs": "盐石垒",
+        "pinyin": "yanshilei"
+    },
+    "Garganacl": {
+        "chs": " 盐石巨灵",
+        "pinyin": "yanshijuling"
+    },
+    "Glimmet": {
+        "chs": "晶光芽",
+        "pinyin": "jingguangya"
+    },
+    "Glimmora": {
+        "chs": "晶光花",
+        "pinyin": "jingguanghua"
+    },
+    "Shroodle": {
+        "chs": "滋汁鼹",
+        "pinyin": "zizhiyan"
+    },
+    "Grafaiai": {
+        "chs": "涂标客",
+        "pinyin": "tubiaoke"
+    },
+    "Fidough": {
+        "chs": "狗仔包",
+        "pinyin": "gouzibao"
+    },
+    "Dachsbun": {
+        "chs": "麻花犬",
+        "pinyin": "mahuaquan"
+    },
+    "Maschiff": {
+        "chs": " 偶叫獒",
+        "pinyin": "oujiaoao"
+    },
+    "Mabosstiff": {
+        "chs": "獒教父",
+        "pinyin": "aojiaofu"
+    },
+    "Bramblin": {
+        "chs": "纳噬草",
+        "pinyin": "nashicao"
+    },
+    "Brambleghast": {
+        "chs": "怖纳噬草",
+        "pinyin": "bunashicao"
+    },
+    "Gimmighoul": {
+        "chs": "索财灵",
+        "pinyin": "suocailing"
+    },
+    "Gimmighoul-Roaming": {
+        "chs": "Gimmighoul-Roaming",
+        "pinyin": "Gimmighoul-Roaming"
+    },
+    "Gholdengo": {
+        "chs": "赛富豪",
+        "pinyin": "saifuhao"
+    },
+    "Great Tusk": {
+        "chs": "雄伟牙",
+        "pinyin": "xiongweiya"
+    },
+    "Brute Bonnet": {
+        "chs": "猛恶菇",
+        "pinyin": "mengegu"
+    },
+    "Sandy Shocks": {
+        "chs": "沙铁皮",
+        "pinyin": "shatiepi"
+    },
+    "Scream Tail": {
+        "chs": "吼叫尾",
+        "pinyin": "houjiaowei"
+    },
+    "Flutter Mane": {
+        "chs": "振翼发",
+        "pinyin": "zhenyifa"
+    },
+    "Slither Wing": {
+        "chs": "爬地翅",
+        "pinyin": "padichi"
+    },
+    "Roaring Moon": {
+        "chs": "轰鸣 月",
+        "pinyin": "hongmingyue"
+    },
+    "Iron Treads": {
+        "chs": "铁辙迹",
+        "pinyin": "tiezheji"
+    },
+    "Iron Moth": {
+        "chs": "铁毒蛾",
+        "pinyin": "tiedue"
+    },
+    "Iron Hands": {
+        "chs": "铁臂膀",
+        "pinyin": "tiebibang"
+    },
+    "Iron Jugulis": {
+        "chs": "铁脖颈",
+        "pinyin": "tiebojing"
+    },
+    "Iron Thorns": {
+        "chs": "铁荆棘",
+        "pinyin": "tiejingji"
+    },
+    "Iron Bundle": {
+        "chs": "铁包袱",
+        "pinyin": "tiebaofu"
+    },
+    "Iron Valiant": {
+        "chs": "铁武者",
+        "pinyin": "tiewuzhe"
+    },
+    "Ting-Lu": {
+        "chs": "古鼎鹿",
+        "pinyin": "gudinglu"
+    },
+    "Chien-Pao": {
+        "chs": "古剑豹",
+        "pinyin": "gujianbao"
+    },
+    "Wo-Chien": {
+        "chs": "古简蜗",
+        "pinyin": "gujiangua"
+    },
+    "Chi-Yu": {
+        "chs": "古玉鱼",
+        "pinyin": "guyuyu"
+    },
+    "Koraidon": {
+        "chs": "故勒顿",
+        "pinyin": "guledun"
+    },
+    "Miraidon": {
+        "chs": "密勒顿",
+        "pinyin": "miledun"
+    },
+    "Tinkatink": {
+        "chs": "小锻匠",
+        "pinyin": "xiaoduanjiang"
+    },
+    "Tinkatuff": {
+        "chs": "巧锻匠",
+        "pinyin": "qiaoduanjiang"
+    },
+    "Tinkaton": {
+        "chs": "巨锻匠",
+        "pinyin": "juduanjiang"
+    },
+    "Charcadet": {
+        "chs": "炭小侍",
+        "pinyin": "tanxiaoshi"
+    },
+    "Armarouge": {
+        "chs": "红莲铠骑",
+        "pinyin": "hongliankaiqi"
+    },
+    "Ceruledge": {
+        "chs": "苍炎刃鬼",
+        "pinyin": "cangyanrengui"
+    },
+    "Toedscool": {
+        "chs": "原野水母",
+        "pinyin": "yuanyeshuimu"
+    },
+    "Toedscruel": {
+        "chs": "陆地水母",
+        "pinyin": "ludishuimu"
+    },
+    "Kingambit": {
+        "chs": "仆刀将军",
+        "pinyin": "pudaojiangjun"
+    },
+    "Clodsire": {
+        "chs": "土王",
+        "pinyin": "tuwang"
+    },
+    "Annihilape": {
+        "chs": "弃世猴",
+        "pinyin": "qishihou"
+    }
 
 };
 const MOVENAMES_LANGS = {
