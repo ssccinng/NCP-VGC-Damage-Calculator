@@ -40,6 +40,8 @@ var showdownToCalcFormes = [
     ["Polteageist-Antique", "Polteageist"],
     ["Zarude-Dada", "Zarude"],
     ["Dudunsparce-Three-Segment", "Dudunsparce-Big"],
+    ["Tatsugiri-Droopy", "Tatsugiri"],
+    ["Tatsugiri-Stretchy", "Tatsugiri"],
 ];
 
 var calcToShowdownFormes = [
@@ -55,8 +57,8 @@ var calcToShowdownFormes = [
 ];
 
 var saveToCalcFormes = [
-    ["Darmanitan-Z", "Darmanitan"],
-    ["Darmanitan-Z-Galar", "Darmanitan-Galar"],
+    ["Darmanitan-Zen", "Darmanitan"],
+    ["Darmanitan-Galar-Zen", "Darmanitan-Galar"],
     ["Zygarde 50%", "Zygarde"],
     ["Zygarde 10%", "Zygarde"],
     ["Zygarde Complete", "Zygarde"],
@@ -65,63 +67,161 @@ var saveToCalcFormes = [
     ["Palafin-Hero", "Palafin"],
 ];
 
-if (readCookie("custom_gen_5") != null) {
-    SETDEX_CUSTOM_BW = JSON.parse(readCookie("custom_gen_5"));
+if (localStorage.custom_gen_5 != null) {
+    SETDEX_CUSTOM_BW = JSON.parse(localStorage.custom_gen_5);
     reloadBWScript();
 }
-if (readCookie("custom_gen_6") != null) {
-    SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_6"));
+if (localStorage.custom_gen_6 != null) {
+    SETDEX_CUSTOM_XY = JSON.parse(localStorage.custom_gen_6);
     reloadXYScript();
 }
-if (readCookie("custom_gen_7") != null) {
-    SETDEX_CUSTOM_SM = JSON.parse(readCookie("custom_gen_7"));
+if (localStorage.custom_gen_7 != null) {
+    SETDEX_CUSTOM_SM = JSON.parse(localStorage.custom_gen_7);
     reloadSMScript();
 }
-if (readCookie("custom_gen_8") != null) {
-    SETDEX_CUSTOM_SS = JSON.parse(readCookie("custom_gen_8"));
+if (localStorage.custom_gen_8 != null) {
+    SETDEX_CUSTOM_SS = JSON.parse(localStorage.custom_gen_8);
     reloadSSScript();
 }
-if (readCookie("custom_gen_84") != null) {
-    SETDEX_CUSTOM_BDSP = JSON.parse(readCookie("custom_gen_84"));
-    reloadBDSPScript();
-}
-if (readCookie("custom_gen_9") != null) {
-    SETDEX_CUSTOM_SV = JSON.parse(readCookie("custom_gen_9"));
+if (localStorage.custom_gen_9 != null) {
+    SETDEX_CUSTOM_SV = JSON.parse(localStorage.custom_gen_9);
     reloadSVScript();
 }
 
+
+if (readCookie("custom_gen_5") != null) {
+    custom_cookies = JSON.parse(readCookie("custom_gen_5"));
+    cookiesToLocalStorage(custom_cookies, 5);
+    eraseCookie("custom_gen_5");
+    reloadBWScript();
+}
+if (readCookie("custom_gen_6") != null) {
+    custom_cookies = JSON.parse(readCookie("custom_gen_6"));
+    cookiesToLocalStorage(custom_cookies, 6);
+    eraseCookie("custom_gen_6");
+    reloadXYScript();
+}
+if (readCookie("custom_gen_7") != null) {
+    custom_cookies = JSON.parse(readCookie("custom_gen_7"));
+    cookiesToLocalStorage(custom_cookies, 7);
+    eraseCookie("custom_gen_7");
+    reloadSMScript();
+}
+if (readCookie("custom_gen_8") != null) {
+    custom_cookies = JSON.parse(readCookie("custom_gen_8"));
+    cookiesToLocalStorage(custom_cookies, 8);
+    eraseCookie("custom_gen_8");
+    reloadSSScript();
+}
+if (readCookie("custom_gen_84") != null) {
+    custom_cookies = JSON.parse(readCookie("custom_gen_84"));
+    cookiesToLocalStorage(custom_cookies, 8);
+    eraseCookie("custom_gen_84");
+    reloadSSScript();
+}
+if (readCookie("custom_gen_9") != null) {
+    custom_cookies = JSON.parse(readCookie("custom_gen_9"));
+    cookiesToLocalStorage(custom_cookies, 9);
+    eraseCookie("custom_gen_9");
+    reloadSVScript();
+}
+
+function cookiesToLocalStorage(custom_cookies, generation) {
+    for (p in custom_cookies) {
+        for (set in custom_cookies[p]) {
+            var customFormat = {
+                "level": custom_cookies[p][set].level,
+                "evs": {
+                    "hp": custom_cookies[p][set].evs.hp,
+                    "at": custom_cookies[p][set].evs.at,
+                    "df": custom_cookies[p][set].evs.df,
+                    "sa": custom_cookies[p][set].evs.sa,
+                    "sd": custom_cookies[p][set].evs.sd,
+                    "sp": custom_cookies[p][set].evs.sp,
+                },
+                "ivs": {
+                    "hp": custom_cookies[p][set].ivs.hp,
+                    "at": custom_cookies[p][set].ivs.at,
+                    "df": custom_cookies[p][set].ivs.df,
+                    "sa": custom_cookies[p][set].ivs.sa,
+                    "sd": custom_cookies[p][set].ivs.sd,
+                    "sp": custom_cookies[p][set].ivs.sp,
+                },
+                "nature": custom_cookies[p][set].nature,
+                "ability": custom_cookies[p][set].ability,
+                "item": custom_cookies[p][set].item,
+                "moves": custom_cookies[p][set].moves,
+                "tera_type": custom_cookies[p][set].tera_type,
+            }
+
+            saveSets(generation, customFormat, p, set);
+        }
+    }
+}
+
 var deletecustom = function () {
-    gen = parseInt($('input[name="gen"]:checked').val());
+    if (confirm("Warning: ALL custom sets from this generation will be deleted. This cannot be undone. Proceed?")) {
+        gen = parseInt($('input[name="gen"]:checked').val());
+        localStorage.removeItem("custom_gen_" + gen);
+        switch (gen) {
+            case 5:
+                SETDEX_CUSTOM_BW = {};
+                reloadBWScript();
+                break;
+            case 6:
+                SETDEX_CUSTOM_XY = {};
+                reloadXYScript();
+                break;
+            case 7:
+                SETDEX_CUSTOM_SM = {};
+                reloadSMScript();
+                break;
+            case 8:
+                SETDEX_CUSTOM_SS = {};
+                reloadSSScript();
+                break;
+            case 9:
+                SETDEX_CUSTOM_SV = {};
+                reloadSVScript();
+                break;
+            default:
+                console.log("THIS SHOULDN\'T HAPPEN LOL");
+        }
+        alert("Custom set deletion successful.");
+    }
+}
+
+function saveSets(gen, customFormat, species, spreadName) {
     switch (gen) {
         case 5:
-            SETDEX_CUSTOM_BW = {};
-            eraseCookie("custom_gen_" + gen);
-            reloadBWScript();
+            if (SETDEX_CUSTOM_BW[species] == null)
+                SETDEX_CUSTOM_BW[species] = {}
+            SETDEX_CUSTOM_BW[species][spreadName] = customFormat
+            localStorage.custom_gen_5 = JSON.stringify(SETDEX_CUSTOM_BW);
             break;
         case 6:
-            SETDEX_CUSTOM_XY = {};
-            eraseCookie("custom_gen_" + gen);
-            reloadXYScript();
+            if (SETDEX_CUSTOM_XY[species] == null)
+                SETDEX_CUSTOM_XY[species] = {}
+            SETDEX_CUSTOM_XY[species][spreadName] = customFormat
+            localStorage.custom_gen_6 = JSON.stringify(SETDEX_CUSTOM_XY);
             break;
         case 7:
-            SETDEX_CUSTOM_SM = {};
-            eraseCookie("custom_gen_" + gen);
-            reloadSMScript();
+            if (SETDEX_CUSTOM_SM[species] == null)
+                SETDEX_CUSTOM_SM[species] = {}
+            SETDEX_CUSTOM_SM[species][spreadName] = customFormat
+            localStorage.custom_gen_7 = JSON.stringify(SETDEX_CUSTOM_SM);
             break;
         case 8:
-            SETDEX_CUSTOM_SS = {};
-            eraseCookie("custom_gen_" + gen);
-            reloadSSScript();
-            break;
-        case 84:
-            SETDEX_CUSTOM_BDSP = {};
-            eraseCookie("custom_gen_" + gen);
-            reloadBDSPScript();
+            if (SETDEX_CUSTOM_SS[species] == null)
+                SETDEX_CUSTOM_SS[species] = {}
+            SETDEX_CUSTOM_SS[species][spreadName] = customFormat
+            localStorage.custom_gen_8 = JSON.stringify(SETDEX_CUSTOM_SS);
             break;
         case 9:
-            SETDEX_CUSTOM_SV = {};
-            eraseCookie("custom_gen_" + gen);
-            reloadSVScript();
+            if (SETDEX_CUSTOM_SV[species] == null)
+                SETDEX_CUSTOM_SV[species] = {}
+            SETDEX_CUSTOM_SV[species][spreadName] = customFormat
+            localStorage.custom_gen_9 = JSON.stringify(SETDEX_CUSTOM_SV);
             break;
         default:
             console.log("THIS SHOULDN\'T HAPPEN LOL");
@@ -171,30 +271,31 @@ var savecustom = function()
     numPokemon = numPokemon.filter(element => element)
 
     for (var a = 0; a < numPokemon.length; a++) {
-        var lines = numPokemon[a].split('\n')
+        var lines = numPokemon[a].split('\n');
         var species = "";
         var item = "";
-        var ability = ""
+        var ability = "";
         var level = 50;
         var EVs = [0, 0, 0, 0, 0, 0];
-        var IVs = [31, 31, 31, 31, 31, 31]
-        var nature = "Serious"
-        var moves = []
+        var IVs = [31, 31, 31, 31, 31, 31];
+        var nature = "Serious";
+        var moves = [];
 
         /*	Pokemon Showdown Export Format
     0	Nickname (Species) @ Item
     1	Ability: Name
     2	Level: #
-    3	EVs: # Stat / # Stat / # Stat
-    4	Serious Nature
-    5	IVs: # Stat
-    6	- Move Name
+    3	Tera Type: #
+    4	EVs: # Stat / # Stat / # Stat
+    5	Serious Nature
+    6	IVs: # Stat
     7	- Move Name
     8	- Move Name
     9	- Move Name
+    10	- Move Name
         */
 
-        //geting rid of gender identities (lel)
+        //The calc won't save gender until there's a new viable, calc-relevant thing in the games. Or Rivalry has a niche again
         if (lines[0].indexOf('(M)') != -1) {
             lines[0] = lines[0].substring(0, lines[0].indexOf('(M)') - 1) +
                 lines[0].substring(lines[0].indexOf('(M)') + 3, lines[0].length);
@@ -225,6 +326,8 @@ var savecustom = function()
                 species = showdownToCalcFormes[i][1]
         }
 
+        var tera_type = pokedex[species].t1;
+
         if (lines[0].indexOf('@') != -1)
             item = lines[0].substring(lines[0].indexOf('@') + 1).trim(); //item is always after @
         ability = lines[1].substring(lines[1].indexOf(' ') + 1).trim(); //ability is always second
@@ -235,9 +338,6 @@ var savecustom = function()
                 }
                 if (lines[i].indexOf("Tera Type") != -1) {
                     tera_type = lines[i].split(' ')[2].trim(); //
-                }
-                else {
-                    tera_type = pokedex[species].t1;
                 }
                 if (lines[i].indexOf("EVs") != -1) //if EVs are in this line
                 {
@@ -346,46 +446,7 @@ var savecustom = function()
             "item": item,
             "moves": moves,
         }
-        switch (gen) {
-            case 5:
-                if (SETDEX_CUSTOM_BW[species] == null)
-                    SETDEX_CUSTOM_BW[species] = {}
-                SETDEX_CUSTOM_BW[species][spreadName] = customFormat
-                createCookie("custom_gen_5", JSON.stringify(SETDEX_CUSTOM_BW), 365)
-                break;
-            case 6:
-                if (SETDEX_CUSTOM_XY[species] == null)
-                    SETDEX_CUSTOM_XY[species] = {}
-                SETDEX_CUSTOM_XY[species][spreadName] = customFormat
-                createCookie("custom_gen_6", JSON.stringify(SETDEX_CUSTOM_XY), 365)
-                break;
-            case 7:
-                if (SETDEX_CUSTOM_SM[species] == null)
-                    SETDEX_CUSTOM_SM[species] = {}
-                SETDEX_CUSTOM_SM[species][spreadName] = customFormat
-                createCookie("custom_gen_7", JSON.stringify(SETDEX_CUSTOM_SM), 365)
-                break;
-            case 8:
-                if (SETDEX_CUSTOM_SS[species] == null)
-                    SETDEX_CUSTOM_SS[species] = {}
-                SETDEX_CUSTOM_SS[species][spreadName] = customFormat
-                createCookie("custom_gen_8", JSON.stringify(SETDEX_CUSTOM_SS), 365)
-                break;
-            case 84:
-                if (SETDEX_CUSTOM_BDSP[species] == null)
-                    SETDEX_CUSTOM_BDSP[species] = {}
-                SETDEX_CUSTOM_BDSP[species][spreadName] = customFormat
-                createCookie("custom_gen_84", JSON.stringify(SETDEX_CUSTOM_BDSP), 365)
-                break;
-            case 9:
-                if (SETDEX_CUSTOM_SV[species] == null)
-                    SETDEX_CUSTOM_SV[species] = {}
-                SETDEX_CUSTOM_SV[species][spreadName] = customFormat
-                createCookie("custom_gen_9", JSON.stringify(SETDEX_CUSTOM_SV), 365)
-                break;
-            default:
-                console.log("THIS SHOULDN\'T HAPPEN LOL");
-        }
+        saveSets(gen, customFormat, species, spreadName);
     }
     switch (gen) {
         case 5:
@@ -467,49 +528,23 @@ var savecalc = function (set, spreadName, accessIVs) {
         "item": set.item,
         "moves": moves,
         "tera_type": set.tera_type,
-    }
+    };
 
+    saveSets(gen, customFormat, species, spreadName);
     switch (gen) {
         case 5:
-            if (SETDEX_CUSTOM_BW[species] == null)
-                SETDEX_CUSTOM_BW[species] = {}
-            SETDEX_CUSTOM_BW[species][spreadName] = customFormat
-            createCookie("custom_gen_5", JSON.stringify(SETDEX_CUSTOM_BW), 365)
             reloadBWScript()
             break;
         case 6:
-            if (SETDEX_CUSTOM_XY[species] == null)
-                SETDEX_CUSTOM_XY[species] = {}
-            SETDEX_CUSTOM_XY[species][spreadName] = customFormat
-            createCookie("custom_gen_6", JSON.stringify(SETDEX_CUSTOM_XY), 365)
             reloadXYScript()
             break;
         case 7:
-            if (SETDEX_CUSTOM_SM[species] == null)
-                SETDEX_CUSTOM_SM[species] = {}
-            SETDEX_CUSTOM_SM[species][spreadName] = customFormat
-            createCookie("custom_gen_7", JSON.stringify(SETDEX_CUSTOM_SM), 365)
             reloadSMScript()
             break;
         case 8:
-            if (SETDEX_CUSTOM_SS[species] == null)
-                SETDEX_CUSTOM_SS[species] = {}
-            SETDEX_CUSTOM_SS[species][spreadName] = customFormat
-            createCookie("custom_gen_8", JSON.stringify(SETDEX_CUSTOM_SS), 365)
             reloadSSScript()
             break;
-        case 84:
-            if (SETDEX_CUSTOM_BDSP[species] == null)
-                SETDEX_CUSTOM_BDSP[species] = {}
-            SETDEX_CUSTOM_BDSP[species][spreadName] = customFormat
-                createCookie("custom_gen_84", JSON.stringify(SETDEX_CUSTOM_BDSP), 365)
-            reloadBDSPScript()
-            break;
         case 9:
-            if (SETDEX_CUSTOM_SV[species] == null)
-                SETDEX_CUSTOM_SV[species] = {}
-            SETDEX_CUSTOM_SV[species][spreadName] = customFormat
-            createCookie("custom_gen_9", JSON.stringify(SETDEX_CUSTOM_SV), 365)
             reloadSVScript()
             break;
         default:

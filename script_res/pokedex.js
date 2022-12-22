@@ -17416,7 +17416,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
             "at": 85,
             "df": 100,
             "sa": 135,
-            "sd": 100,
+            "sd": 115,
             "sp": 135,
         },
         "w": 240.0,
@@ -17484,6 +17484,9 @@ var POKEDEX_SV = {};
     'Eiscue-Noice', 'Indeedee-F', 'Zacian-Crowned', 'Zamazenta-Crowned', 'Urshifu-Rapid Strike', 'Calyrex-Ice Rider', 'Calyrex-Shadow Rider', 'Basculegion-F', 'Enamorus-Therian', 'Oinkologne-F',
     'Dudunsparce-Big','Palafin-Hero','Maushold-Four','Gimmighoul-Roam', 'Hoopa-Unbound', 'Wooper-Paldea'
 ].forEach(e => POKEDEX_SV[e] = POKEDEX_SV_NATDEX[e]);
+
+//performs deep copy; necessary to preserve form data for nat dex
+POKEDEX_SV = $.extend(true, {}, POKEDEX_SV);
 
 var NO_FORMS_SV =
     [
